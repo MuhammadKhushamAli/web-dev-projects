@@ -7,7 +7,7 @@ form.addEventListener('submit', (event) => {
     const weight = parseFloat(form.querySelector('#weight').value);
 
     const result = document.createElement('h3');
-    result.setAttribute('style', 'color: white');
+    result.setAttribute('style', 'color: white; text-align: center');
 
     // Error Check
     if (height === '' || height <= 0 || isNaN(height)) {
@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
     }
     else {
         height = height * 0.3048 // Ft to Meter
-        const bmi = weight / (height * height).toFixed(2);
+        const bmi = (weight / (height * height)).toFixed(2);
 
         let status;
         if (bmi < 18.6) {
