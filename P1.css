@@ -10,7 +10,8 @@ body {
     grid-template-areas: "header"
         "body"
         "footer";
-        align-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     height: 100%;
     width: 100vw;
     align-content: center;
+    justify-items: center;
 }
 
 header h1 {
@@ -27,6 +29,8 @@ header h1 {
 
 main {
     grid-area: body;
+    align-content: center;
+    justify-items: center;
 }
 
 .Colors {
