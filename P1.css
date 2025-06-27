@@ -2,10 +2,11 @@
     text-align: center;
 }
 
-.colors{
+.Colors{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button{
@@ -16,4 +17,13 @@
 
 #yellow{
     background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#white{
+    background-color: white;
+}
+#blue{
+    background-color: blue;
 }
