@@ -79,3 +79,10 @@ input[type="submit"] {
 input[type = "submit"]:hover{
     background-color: rgb(216, 88, 88);
 }
+
+.result{
+    padding: 10%;
+}
+footer{
+    grid-area: footer;
+}
