@@ -95,7 +95,7 @@ function gameConditionsMaintainer(guessNumber) {
 
     if (remainingGuesses == 0) {
         displayResult(`You Lose the Game
-             The Number Was ${randomNumber}`);
+            The Number Was ${randomNumber}`);
         endGame();
     }
 
