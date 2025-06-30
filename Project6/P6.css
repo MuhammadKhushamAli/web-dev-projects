@@ -1,0 +1,49 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-rows: repeat(1fr, 3);
+    grid-template-areas: "header"
+        "main"
+        "footer";
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+main #output{
+    justify-items: center;
+    align-content: center;
+}
+
+main #output table td, th
+{
+    border: 1px solid white;
+    text-align: center;
+}
+
+main #output p {
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+}
+
+footer address {
+    text-align: center;
+}
