@@ -18,6 +18,7 @@ const button = document.getElementById('fetchBtn');
 const image = document.getElementsByTagName('img');
 const name = document.querySelector('.card-title');
 const text = document.querySelector('.card-text');
+
 button.addEventListener('click', (event) => {
     if (data) {
         button.remove();
