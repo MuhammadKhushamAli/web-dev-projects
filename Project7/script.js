@@ -31,6 +31,14 @@ function indexManager()
     }
 }
 
+// It Run SlideShow
+function slidesChanger(direction)
+{
+    index += direction;
+    indexManager();
+    imageUpdator(index);
+}
+
 setInterval(() => {
     imageUpdator(index);
     index++;
@@ -38,14 +46,9 @@ setInterval(() => {
 }, 4000)
 
 next.addEventListener('click',(event) => {
-    index++;
-    indexManager();
-    imageUpdator(index);
-
+    slidesChanger(1);
 }, false)
 
 prev.addEventListener('click', () => {
-    index--;
-    indexManager();
-    imageUpdator(index);
+    slidesChanger(-1);
 }, false)
