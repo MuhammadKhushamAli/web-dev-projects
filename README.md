@@ -1,1 +1,1 @@
-These are my first projects in javascript learnin journey.
+These are my projects in javascript learning journey.

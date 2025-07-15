@@ -49,7 +49,7 @@ function displayResult(message) {
         // Auto Hide
         setTimeout(() => {
             resultContainer.classList.remove('show');
-        }, 1000)
+        }, 3000)
     }
     catch (error) {
         console.error(error.message);
