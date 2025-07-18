@@ -24,9 +24,9 @@ export default function InputField({
                     id={id}
                     disabled={isAmountDisabled}
                     placeholder="Amount"
-                    value={amount}
+                    value={isNaN(amount) || amount == 0 ? '' : amount}
                     onChange={(event) => {
-                        onAmountChange && onAmountChange(event.target.value ? Number(event.target.value) : '');
+                        onAmountChange && onAmountChange(isNaN(event.target.value) ? 0 : Number(event.target.value));
                     }}
                 />
             </div>
