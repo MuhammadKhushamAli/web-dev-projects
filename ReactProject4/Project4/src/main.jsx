@@ -9,8 +9,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout/>,
-    children={
-      [
+    children: [
         {
           path: "",
           element: <Home/>
@@ -28,9 +27,8 @@ const router = createBrowserRouter([
           element:<GitHub/>
         }
       ]
-    }
   }
-])
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
