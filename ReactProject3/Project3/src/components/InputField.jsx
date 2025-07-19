@@ -25,6 +25,7 @@ export default function InputField({
                     name="amount"
                     id={id}
                     disabled={isAmountDisabled}
+                    min={0}
                     placeholder="Amount"
                     value={isNaN(amount) || amount == 0 ? '' : amount}
                     onChange={(event) => {
