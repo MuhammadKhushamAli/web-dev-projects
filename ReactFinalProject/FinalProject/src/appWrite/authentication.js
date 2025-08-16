@@ -20,7 +20,7 @@ export class Authentication {
 
             if(signUp)
             {
-
+                return this.Login({email, password});
             }
             else
             {
