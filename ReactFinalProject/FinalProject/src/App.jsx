@@ -1,25 +1,29 @@
-import { useEffect } from "react";
-import {useDispatch} from 'react-redux';
+import { useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
 import { login, logout } from "./features/authentication/authSlice";
 import authService from "./appWrite/authentication";
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const userData = authService.getCurrentSession();
+    authService.getCurrentSession()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login({ userData }));
+        }
+        else {
+          dispatch(logout());
+        }
+      })
+      .finally(() => setLoading(false));
 
-    if(userData)
-    {
-      dispatch(login(userData));
-    }
-    else{
-      dispatch(logout());
-    }
-    
-  }, [])
+  }, []);
   return (
-    <></>
+    <div>
+      {loading ? <h1>Loading</h1> : <h1>Running</h1>}
+    </div>
   )
 }
 

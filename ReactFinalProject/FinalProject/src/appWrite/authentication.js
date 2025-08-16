@@ -5,7 +5,7 @@ export class Authentication {
     #client = new Client();
     #account;
 
-    Authentication() {
+    constructor() {
         this.#client
             .setEndpoint(config.api_endPoint)
             .setProject(config.projectID);
@@ -48,7 +48,7 @@ export class Authentication {
         try {
             return await this.#account.get();
         } catch (error) {
-            console.error(`Is Logged In Service Error: ${error}`);   
+            console.error(`getCurrentSession Service Error: ${error}`);   
         }
         return null;
     }

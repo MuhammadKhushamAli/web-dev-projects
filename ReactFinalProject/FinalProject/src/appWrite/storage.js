@@ -5,7 +5,7 @@ export class StorageService{
     #client = new Client();
     #storage;
 
-    StorageService()
+    constructor()
     {
         this.#client
         .setEndpoint(config.api_endPoint)

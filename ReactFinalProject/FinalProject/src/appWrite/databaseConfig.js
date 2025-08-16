@@ -5,7 +5,7 @@ export class DBService {
     #client = new Client();
     #database;
 
-    DBService() {
+    constructor() {
         this.#client
             .setEndpoint(config.api_endPoint)
             .setProject(config.projectID);

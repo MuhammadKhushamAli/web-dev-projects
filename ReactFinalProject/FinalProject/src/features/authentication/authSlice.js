@@ -1,14 +1,14 @@
-import { combineSlices } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     status: false,
     userData: null
 };
 
-const authSlice = combineSlices({
+const authSlice = createSlice({
     name: 'authentication',
     initialState,
-    reducer: {
+    reducers: {
         login: (state, action) => {
             state.status = true;
             state.userData = action.payload.userData;
