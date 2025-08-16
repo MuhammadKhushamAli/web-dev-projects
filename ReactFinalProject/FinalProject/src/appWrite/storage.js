@@ -30,12 +30,12 @@ export class StorageService{
     }
 
     // It deletes the file
-    async DeleteFile(fileId)
+    async DeleteFile(fileID)
     {
         try {
             return await this.#storage.deleteFile(
                 config.bucketID,
-                fileId
+                fileID
             );
         } catch (error) {
             console.error(`Error in Delete File: ${error}`);
@@ -44,12 +44,12 @@ export class StorageService{
     }
 
     // It gets preview
-    async GetFilePreview(fileId)
+    async GetFilePreview(fileID)
     {
         try {
             return await this.#storage.getFilePreview(
                 config.bucketID,
-                fileId
+                fileID
             );
         } catch (error) {
             console.error(`Error in GetFilePreview: ${error}`);
