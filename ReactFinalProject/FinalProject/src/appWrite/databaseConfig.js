@@ -14,18 +14,18 @@ export class DBService {
     }
 
     // It creates a blog
-    async CreateBlog({ title, content, imageId, status, userId, slug }) {
-        try {
+    async CreateBlog({ title, description, imageID, status, userID, slug }) {
+        try {   
             return await this.#database.createDocument(
                 config.databaseID,
                 config.collectionID,
                 slug,
                 {
                     title,
-                    content,
-                    imageId,
+                    description,
+                    imageID,
                     status,
-                    userId
+                    userID
                 }
             );
         } catch (error) {
@@ -35,7 +35,7 @@ export class DBService {
     }
 
     // It updates the blog
-    async UpdateBlog(slug, {title, content, imageId, status})
+    async UpdateBlog(slug, {title, description, imageID, status})
     {
         try {
             return await this.#database.updateDocument(
@@ -44,8 +44,8 @@ export class DBService {
                 slug,
                 {
                     title,
-                    content,
-                    imageId,
+                    description,
+                    imageID,
                     status
                 }
             );
