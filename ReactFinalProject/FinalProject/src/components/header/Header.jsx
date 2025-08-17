@@ -38,7 +38,8 @@ export default function Header() {
     }, [isLoggedIn])
 
     return (
-        <Container>
+        <Container
+        className="flex flex-row justify-between h-{10vh}">
             <div>
                 <h1>Logo</h1>
             </div>
@@ -55,7 +56,9 @@ export default function Header() {
             </div>
             <div>
                 {isLoggedIn && (
-                    <LogoutBtn />
+                    <LogoutBtn
+                    className="p-3"
+                    />
                 )}
             </div>
         </Container>

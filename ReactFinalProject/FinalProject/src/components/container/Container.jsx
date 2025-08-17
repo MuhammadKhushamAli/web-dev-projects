@@ -1,5 +1,5 @@
-export default function Container({ children }) {
-    return <div className="w-full">
+export default function Container({ children, className = "" }) {
+    return <div className={`w-full ${className}`}>
         {children}
     </div>;
 }
