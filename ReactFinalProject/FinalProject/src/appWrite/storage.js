@@ -47,7 +47,7 @@ export class StorageService{
     async GetFilePreview(fileID)
     {
         try {
-            return await this.#storage.getFilePreview(
+            return this.#storage.getFilePreview(
                 config.bucketID,
                 fileID
             );

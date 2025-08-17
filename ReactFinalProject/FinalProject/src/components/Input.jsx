@@ -1,22 +1,24 @@
 import { forwardRef, useId } from "react";
 
-const Input = forwardRef(({label,
+const Input = forwardRef(({ label,
     type = "text",
     className = "",
-    ...props}, ref) =>
-{
+    ...props }, ref) => {
     const id = useId();
-    return(
+    return (
         <div>
-            <label
-            htmlFor={id}
-            >{label}</label>
-        <input type={type}
-        id={id}
-        ref={ref}
-        className={className}
-        {...props}
-         />
+            {label &&
+                <label
+                    htmlFor={id}
+                >{label}
+                </label>
+            }
+            <input type={type}
+                id={id}
+                ref={ref}
+                className={className}
+                {...props}
+            />
         </div>
     )
 })
