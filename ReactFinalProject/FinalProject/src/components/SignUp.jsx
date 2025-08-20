@@ -1,7 +1,7 @@
 import { useDispatch } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../features/authentication/authSlice";
-import { SignUp as signUpService } from "../appWrite/authentication";
+import authService from "../appWrite/authentication";
 import { useForm } from "react-hook-form";
 import Input from "./index";
 
@@ -14,7 +14,7 @@ export default function SignUp() {
     const submitionHandler = async (data) => {
         setError("");
         try {
-            const session = await signUpService(data);
+            const session = await authService.SignUp(data);
 
             if (session) {
                 dispatch(login(session));
@@ -28,6 +28,10 @@ export default function SignUp() {
     }
 
     return (
+        <div>
+            <div>
+                {error && <p className="error">{error}</p>}
+            </div>
         <form
         onSubmit={handleSubmit(submitionHandler)}
         >
@@ -47,7 +51,7 @@ export default function SignUp() {
                  {required: true,
                     validate: {
                         matchPattern: (value) => /^(?=.{1,254}$)(?=.{1,64}@)(?![.])(?!.*\.\.)[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+(?<![.])@(?:(?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+[A-Za-z]{2,63}$/.test(value) ||
-                        "Invalid email format";
+                        "Invalid email format"
                     }
                  })}
              />
@@ -59,10 +63,11 @@ export default function SignUp() {
                  {required: true,
                     validate: {
                         matchPattern: (value) => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value) ||
-                        "Invalid password format";
+                        "Invalid password format"
                     }
                  })}
               />
         </form>
+    </div>
     );
 }
