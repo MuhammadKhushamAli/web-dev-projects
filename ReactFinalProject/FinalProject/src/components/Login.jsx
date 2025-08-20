@@ -15,10 +15,21 @@ export default function Login() {
     const submitHandler = async (data) => {
         try {
             setError('');
-            const userData = await authService.Login(data);
-            if (userData) {
-                dispatch(login(userData));
-                navigate("/");
+            const session = await authService.Login(data);
+            if (session) {
+                const userData = await authService.getCurrentSession();
+                if (userData) {
+                    dispatch(login(userData));
+                    navigate("/");
+                }
+                else
+                {
+                    setError('Failed to retrieve user data.');
+                }
+            }
+            else
+            {
+                setError('Login failed. Please check your credentials.');
             }
         }
         catch (error) {
@@ -30,7 +41,7 @@ export default function Login() {
             <div>
                 {error && <p className="error">{error}</p>}
             </div>
-            
+
             <form onSubmit={handleSubmit(submitHandler)}>
                 <Input
                     label='Email'
