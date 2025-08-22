@@ -14,7 +14,7 @@ export default function RTE(
         <div>
             {label && <label>{label}</label>}
             <Controller
-                name={name || "Content"}
+                name={name || "description"}
                 control={control}
                 render={({ field: { onChange } }) => (
                     <Editor
