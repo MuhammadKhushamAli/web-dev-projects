@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../features/authentication/authSlice";
 import authService from "../appWrite/authentication";
 import { useForm } from "react-hook-form";
-import Input from "./index";
+import { Input } from "./index";
 
 export default function SignUp() {
     const navigate = useNavigate();

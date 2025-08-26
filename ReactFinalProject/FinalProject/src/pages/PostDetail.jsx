@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { usePrams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import database from '../appWrite/databaseConfig';
 import storage from '../appWrite/storage';
 import { Button } from '../components';
 
 export default function PostDetail() {
-    const { postID } = usePrams();
+    const { postID } = useParams();
     const [post, setPost] = useState('');
     const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ export default function PostDetail() {
                     />
                     <p>{post.description}</p>
                     <Button
-                    onClick={() => navigate(`/PostEdit/${post.$id}`)}>
+                    onClick={() => navigate(`/PostModification/${post.$id}`)}>
                         Edit Post
                     </Button>
                     <Button

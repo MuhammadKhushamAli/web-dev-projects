@@ -9,7 +9,7 @@ import Select from "./Select";
 import RTE from './RTE';
 import Login from "./Login";
 import AuthenticationLayout from './AuthenticationLayout';
-import Post_Form from './Post-Form';
+import Post_Form from './post-form/Post-Form';
 
 
 export {

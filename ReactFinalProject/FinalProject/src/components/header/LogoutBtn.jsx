@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import authService from "../../appWrite/authentication";
-import { logout } from "../../store/authSlice";
+import { logout } from "../../features/authentication/authSlice";
 
 export default function Logout({
     className = "",

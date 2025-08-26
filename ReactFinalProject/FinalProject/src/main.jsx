@@ -5,10 +5,10 @@ import App from './App.jsx';
 import { Provider } from 'react-redux';
 import store from './app/store';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import { AllPosts, EditPost, Home, Login, Signup } from './pages';
+import { AllPosts, EditPost, Home, Login, Signup, PostDetail } from './pages';
 import AuthenticationLayout from './components/AuthenticationLayout';
 
-const router = createBrowserRouter({
+const router = createBrowserRouter([{
   path: '/',
   element: <App />,
   children: [
@@ -61,7 +61,7 @@ const router = createBrowserRouter({
       )
     }
   ]
-})
+}])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import database from "../appWrite/databaseConfig";
 import { Post_Form } from "../components";
+import { useParams } from "react-router-dom";
 
 export default function EditPost(){
     const {postID} = useParams();
